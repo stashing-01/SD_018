@@ -1,9 +1,9 @@
 // frontend/src/pages/App.jsx
 import React, { useState } from 'react';
-import WorkloadForm from '../components/WorkloadForm';
-import CostComparison from '../components/CostComparison';
-import { fetchRecommendations } from '../utils/api';
-import '../styles/App.css';
+import WorkloadForm from './components/WorkloadForm';
+import CostComparison from './components/CostComparison';
+import { fetchRecommendations } from './utils/api';
+import './styles/App.css';
 
 function App() {
   const [recommendations, setRecommendations] = useState([]);

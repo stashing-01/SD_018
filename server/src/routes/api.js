@@ -4,5 +4,6 @@ const router = express.Router();
 const pricingController = require('../controllers/pricingController');
 
 router.get('/gpu-pricing', pricingController.getPricing);
+router.post('/recommend', pricingController.getRecommendations);
 
 module.exports = router;

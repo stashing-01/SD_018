@@ -1,0 +1,27 @@
+// backend/src/data/mock-pricing.json
+{
+    "data": [
+      {
+        "country": "india",
+        "resource_class": "a100",
+        "vcpus": 16,
+        "ram": 96,
+        "price_per_hour": 3.42,
+        "price_per_month": 1563,
+        "price_per_spot": 2.394,
+        "gpu_description": "1x A100-80GB",
+        "region": "mumbai"
+      },
+      {
+        "country": "india",
+        "resource_class": "a30",
+        "vcpus": 8,
+        "ram": 32,
+        "price_per_hour": 0.9,
+        "price_per_month": 525,
+        "price_per_spot": 0.63,
+        "gpu_description": "1x A30-24GB",
+        "region": "mumbai"
+      }
+    ]
+  }

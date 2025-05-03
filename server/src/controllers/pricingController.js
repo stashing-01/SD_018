@@ -25,7 +25,14 @@ exports.getPricing = async (req, res) => {
 };
 
 exports.getRecommendations = async (req, res) => {
+    if (!req.body) {
+        console.log('Request body is undefined');
+        return res.status(400).json({ error: 'Request body is missing' });
+    }
+
     const { modelType, datasetSize, task, budget, region } = req.body;
+    
+    console.log('Received request:', req.body);
 
     if (!modelType || !datasetSize || !budget || !region) {
         return res.status(400).json({ error: 'Missing required fields' });

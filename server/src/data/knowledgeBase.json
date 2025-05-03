@@ -1,4 +1,3 @@
-// backend/src/data/knowledgeBase.json
 {
     "a100": { "description": "Ideal for large batch training due to 80GB VRAM" },
     "a30": { "description": "Cost-effective for inference with 24GB VRAM" }

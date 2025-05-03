@@ -1,13 +1,21 @@
-// client/src/utils/api.js
-import axios from 'axios'; // This line causes the error because axios is not installed
+import axios from 'axios';
 
-const API_URL = 'http://localhost:3001/api';
+export const fetchGPUData = async (regionCode) => {
+  const response = await axios.get('https://customer.acecloudhosting.com/api/v1/pricing', {
+    params: {
+      is_gpu: true,
+      resource: 'instances',
+      region: regionCode
+    }
+  });
+  return response.data;
+};
 
-export const fetchRecommendations = async (formData) => {
-  try {
-    const response = await axios.post(`${API_URL}/recommend`, formData);
-    return response.data;
-  } catch (error) {
-    throw new Error(error.response?.data?.messages || 'Failed to fetch recommendations');
-  }
+export const getRegionCode = (region) => {
+  const regionMap = {
+    'india': 'ap-south-mum-1',
+    'usa': 'us-east-1',
+    'europe': 'eu-central-1'
+  };
+  return regionMap[region] || 'ap-south-mum-1';
 };
